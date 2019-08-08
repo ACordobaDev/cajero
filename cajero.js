@@ -38,7 +38,6 @@ function EntregarDinero ()
         for (var e of entregado)
         { if (e.cantidad > 0)
             {
-                resultado.innerHTML = "";
                 resultado.innerHTML +=  e.cantidad + " Billetes de $" + e.valor + '<img src="'+e.img+'" height="42" width="42" />'+ "<br />" ;
                 
             }
