@@ -15,7 +15,7 @@ function EntregarDinero ()
     for(var bi of caja)
     {
        if (dinero > 0 )
-       {
+       {   
         Division = Math.floor(dinero / bi.valor);
         if(Division > bi.cantidad)
         {
@@ -27,7 +27,8 @@ function EntregarDinero ()
         } 
         entregado.push( new Billete(bi.valor, Papeles, bi.img) );
         dinero = dinero - (bi.valor * Papeles);
-       }
+        bi.cantidad -= Papeles;
+          }
     }
     if(dinero > 0)
     {
@@ -36,13 +37,19 @@ function EntregarDinero ()
     else 
     {
         for (var e of entregado)
-        { if (e.cantidad > 0)
+        { 
+            resultado.innerHTML = "";
+            if (e.cantidad > 0)
             {
                 resultado.innerHTML +=  e.cantidad + " Billetes de $" + e.valor + '<img src="'+e.img+'" height="42" width="42" />'+ "<br />" ;
-                
-            }
+              
+               
+              }
 
-        }
+
+            }
+            
+            console.log(caja);
     }
 
 }
@@ -58,6 +65,10 @@ caja.push( new Billete (10, 2, "img/10.png" ) );
 var dinero = 0;
 var Division = 0;
 var Papeles = 0;
+
+var resultado = document.getElementById("resultado");
+var resultado = document.getElementById("resultado");
+
 
 var resultado = document.getElementById("resultado");
 var BotonExtraer = document.getElementById("extraer");
