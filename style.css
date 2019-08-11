@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+
+:root{
+    --Color-Bg: #141c23 ;
+    --Color-Primario:#7bff50;
+    --Color-Segundario:#5c5e5e ; 
+}
+body{
+    background: var(--Color-Bg) ;
+}
+
+p{
+    font-family: 'Press Start 2P', cursive; 
+    color: var(--Color-Segundario);
+}
+
+
+/* Footer */
+.derechos {
+    background:#0072D2;
+    text-align:center;
+   text-decoration:none;
+    font-weight: 300;
+    color:#fff;
+  padding: 1em;
+    margin:0em;
+  
+  }
+  /* FIN Footer */
+/* Diseño PlatziBlank ATM */
+.atm-bg{
+    background: #a7a7a7;
+    width: 100%;
+    height: auto;
+    padding: 2em;
+
+}
+.atm-conte{
+    background: #c0c0c0;
+    width: 100%;
+    height: 650px;
+    padding: 1em;
+    border-top: 1em solid #666666;
+    border-left: 1em solid #b4b4b4;
+    border-right: 1em solid #b4b4b4;
+    border-bottom: 0.3em solid #c9c9c9;
+
+
+}
+.title-bank{
+    background: #343a40;
+    text-align: center;
+    color: #7bff50;
+    font-family: 'Press Start 2P', cursive;
+    padding: 1em 0em 1em 0em;
+}
+
+.pantalla{
+   background: #0c01a5;
+    width: 100%;
+    height: 250px;
+    border-top: 1em solid #666666;
+    border-left: 1em solid #b4b4b4;
+    border-right: 1em solid #b4b4b4;
+    border-bottom: 0.8em solid #c9c9c9;
+    padding: 0.5em;
+    
+}
+h3{
+    margin: 0em !important;
+}
+
+input{
+    background: none;
+    border-style: none;
+    color: #ffffff;
+    border-bottom: 1px solid #c9c9c9;
+    font-family: 'Press Start 2P', cursive;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contadores{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5em;
+}
+.contadores h5{
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6em !important;
+
+}
+
+.conte-resultado{
+    padding: 0.8em;
+}
+#R-billete{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Diseño PlatziBlank ATM */
+
