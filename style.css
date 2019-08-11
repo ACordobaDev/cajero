@@ -57,6 +57,7 @@ p{
 }
 
 .pantalla{
+    display: grid;
    background: #0c01a5;
     width: 100%;
     height: 250px;
@@ -80,6 +81,15 @@ input{
     margin-left: auto;
     margin-right: auto;
 }
+button
+{
+    background: none;
+    border-style: none;
+    color: #ffffff;
+    font-family: 'Press Start 2P', cursive;
+    margin-left: auto;
+    margin-right: auto; 
+}
 .contadores{
     display: flex;
     justify-content: space-between;
@@ -99,6 +109,47 @@ input{
     display: flex;
     justify-content: space-between;
 }
+.resultado{
+    font-family: 'Press Start 2P', cursive;
+}
 
+@media only screen and (max-width: 600px)
+{
+        .title-bank h3
+        {
+            font-size: 0.8em;
+        }
+        .atm-bg
+        {
+            padding: 0.5em;
+        }
+        .atm-conte
+        {
+            border-top: 0.4em solid #666666;
+            border-left: 0.4em solid #b4b4b4;
+            border-right: 0.4em solid #b4b4b4;
+            border-bottom: 0.2em solid #c9c9c9;
+            padding: 0.4em;
+            height: 100vh;
+        }
+        .contadores
+        {
+            display: block;
+        justify-content: center;   
+        }
+        input
+        {
+            width: 100%;
+        }
+        p
+        {
+            font-size: 0.5em;
+        }
+        img
+        {
+            width: 70px;
+        }
+
+}
 /* Diseño PlatziBlank ATM */
 
