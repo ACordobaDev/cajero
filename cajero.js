@@ -8,6 +8,11 @@ class Billete
     }
 }
 
+$( document ).ready(function() {
+    totalencaja(caja.valor, caja.cantidad); // Contar cuanto dinero tengo en el cajero disponible, ver funcion linea 103
+});
+
+
 var Salieron = 0; // cuanto dinero he sacado en cada retiro
 var Totalcaja = 0; // cuanto dinero tengo en total en caja
 var caja = []; // Billetes que tiene el cajero array Class Billete
@@ -38,10 +43,12 @@ function EntregarDinero ()
     dinero = parseInt( t.value); // dinero es igual al valor entero del input con ID dinero
     Totalcaja= 0; // cuanto dinero tengo en total del cajero
     Salieron += dinero; // cuanto dinero he sacado en cada retiro
- 
+
 
     for(var bi of caja)
     {
+
+
        if (dinero > 0 ) // Si el valor introducido en el input ID dinero es mayor a 0
        { 
 
@@ -57,11 +64,18 @@ function EntregarDinero ()
                     Papeles = Division; // papeles es igual a division ( cociente de la division linea 48)
                 }
             entregado.push( new Billete(bi.valor, Papeles, bi.img) ); // billetes que entrego al cliente, Valor Billete , Cantidad a entregar , imagen a imprimir 
+            
             dinero = dinero - (bi.valor * Papeles); //dinero es igual a dinero menos (valor del billete por cantidad de billetes a entregar )
-
-
+            if (Papeles < bi.cantidad){
+                $("p").remove();
+                    $("img").remove();
+                bi.cantidad -= Papeles;   // restar la cantidad de billetes entregados de la caja ( los billetes que tengo menos los billetes que estoy sacando)
  
+            }
+
+
          }
+         
          totalencaja(bi.valor, bi.cantidad); // Contar cuanto dinero tengo en el cajero disponible, ver funcion linea 103
     }
 
@@ -70,26 +84,30 @@ function EntregarDinero ()
         resultado.innerHTML = " No dinero"; // mostraer en HTML 
         console.log( caja);
         console.log("Dinero en caja", Totalcaja);
+        
         }
     
     else 
     {
 
+
         for (var e of entregado) // e es igual a billetes a entregar
         { 
+            
              if (e.cantidad > 0)  // si la cantidad de billetes a entregar es mayor de 0
                 {
-                           
+                                       
                     resultado.innerHTML += '<p>' + e.cantidad + " Billetes de $" + e.valor +"  <p/>" ; // imprimo la cantidad y el valor del billete
                     RBillete.innerHTML +=  '<img src="'+e.img+'" width="100" class="img-fluid" />' ; // imprimo la imagen del billete
                     
-                    bi.cantidad -= e.cantidad;   // restar la cantidad de billetes entregados de la caja ( los billetes que tengo menos los billetes que estoy sacando) 
+
 
                 }
 
                    
         }
 
+ 
 
             console.log("Salieron", Salieron);
             sale.innerHTML = "Haz Sacado : " + Salieron;
@@ -106,3 +124,4 @@ function totalencaja (ValorBillete, cantidadBillete)
 {
 Totalcaja += (ValorBillete * cantidadBillete );
 }
+
