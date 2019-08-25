@@ -14,17 +14,38 @@ p{
     font-family: 'Press Start 2P', cursive; 
     color: var(--Color-Segundario);
 }
-
+td, th{
+    font-family: 'Press Start 2P', cursive; 
+    color: var(--Color-Primario);
+    font-size: 0.7em;
+    padding: 0.9em;
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  table, td, th {
+    border: 1px solid var(--Color-Primario);
+  }
+  .container{
+    padding-top: 3em;
+    padding-bottom: 2em;
+  }
 
 /* Footer */
 .derechos {
-    background:#0072D2;
+    
+    background:var(--Color-Bg);
     text-align:center;
    text-decoration:none;
     font-weight: 300;
     color:#fff;
   padding: 1em;
     margin:0em;
+    border-top: 2px solid var(--Color-Primario);
   
   }
   /* FIN Footer */
